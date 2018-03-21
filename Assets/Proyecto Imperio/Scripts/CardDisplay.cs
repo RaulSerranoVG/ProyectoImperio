@@ -5,7 +5,7 @@ using UnityEngine.UI;//Para referenciar al texto e imagenes
 
 public class CardDisplay : MonoBehaviour {
 
-    public Card card;
+    public CardScript card;
 
     public Text nameText;
     public Text descriptionText;

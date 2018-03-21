@@ -9,7 +9,7 @@ using UnityEngine;
 //Decimos a Unity que permita crear este objeto a través del asset menu
 //[CreateAssetMenu(fileName = "New Card", menuName = "Cards/Minion")] Para distintos tipos de cartas
 [CreateAssetMenu(fileName = "New Card", menuName = "Card")]
-public class Card : ScriptableObject {
+public class CardScript : ScriptableObject {
 
     //Valores que queremos que guarde este objeto
     public string nameCard;
