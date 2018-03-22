@@ -8,7 +8,7 @@ public class Player  {
     public const int MaxDeck = 30;
     public const int MaxHand = 10;
     public const int MaxBattlefield = 10;
-    public const int NumBattlefields = 1;
+    public const int NumBattlefields = 3;
     //Secretos
 
     //Atributos
@@ -22,7 +22,7 @@ public class Player  {
     public List<Card> forts;
     public List<Card> deck;
     public List<Card> hand;
-    public List<Card> battlefield;
+    public List<List<Card>> battlefields;
     public List<Card> graveyard;
     //Lista de secretos, armas
 
@@ -40,9 +40,14 @@ public class Player  {
             case Zones.Hand:
                 return hand;
 
-            case Zones.Battlefield:
-                return battlefield;
+            case Zones.LeftBattlefield:
+                return battlefields[0];
 
+            case Zones.CenterBattlefield:
+                return battlefields[1];
+
+            case Zones.RightBattlefield:
+                return battlefields[2];
             case Zones.Graveyard:
                 return graveyard;
 
@@ -55,16 +60,22 @@ public class Player  {
 
     public Player(int ind)
     {
-       index = ind;
+        index = ind;
 
-       gold = new Gold();
+        gold = new Gold();
 
-       //Creación de las listas
-       forts = new List<Card>(NumBattlefields);
-       deck = new List<Card>(MaxDeck);
-       hand = new List<Card>(MaxHand);
-       battlefield = new List<Card>(MaxBattlefield);
-       graveyard = new List<Card>(MaxDeck);
-}
+        //Creación de las listas
+        forts = new List<Card>(NumBattlefields);
+        deck = new List<Card>(MaxDeck);
+        hand = new List<Card>(MaxHand);
+        graveyard = new List<Card>(MaxDeck);
+        battlefields = new List<List<Card>>(NumBattlefields);
+
+        for (int i = 0; i < NumBattlefields; i++)
+        {
+            battlefields[i] = new List<Card>(MaxBattlefield);
+
+        }
+    }
 
 }

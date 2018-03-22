@@ -10,5 +10,7 @@ public enum Zones
     Deck,
     Hand,
     Graveyard,
-    Battlefield,
+    LeftBattlefield,
+    CenterBattlefield,
+    RightBattlefield
 }//Armas, heroes, secretos
